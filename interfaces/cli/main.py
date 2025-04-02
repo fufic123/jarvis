@@ -8,7 +8,7 @@ def main():
         if user_input in ['exit', 'quit']:
             break
         
-        jarvis.process_input(user_input)
+        response = jarvis.process_input(user_input)
         
 
 if __name__ == '__main__':

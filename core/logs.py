@@ -24,6 +24,6 @@ def setup_logging():
     ))
 
     logger = logging.getLogger("jarvis")
-    logger.setLevel(logging.INFO)
+    logger.setLevel(logging.DEBUG)
     logger.addHandler(handler)
     logger.propagate = False

@@ -4,7 +4,7 @@ from debug.decorators import log_call
 @register_plugin
 class EchoPlugin(Plugin):
     _name = '/yo'
-    _aliases = []
+    _aliases = ["/hi", "/hello"]
     
     @log_call
     def run(self, args: list) -> str:

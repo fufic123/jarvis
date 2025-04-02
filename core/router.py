@@ -5,7 +5,11 @@ from debug.context import log_context
 
 class Router(DebugMixin):
     def __init__(self):
-        self._plugins = Plugin.registry
+        self._plugin_map = {}
+        for plugin in Plugin.registry:
+            self._plugin_map[plugin.name] = plugin
+            for alias in plugin.aliases:
+                self._plugin_map[alias] = plugin
         
     def handle_command(self, command: str) -> str:
         with log_context("Routing Command"):
@@ -22,9 +26,9 @@ class Router(DebugMixin):
             self.log(f"Parsed command: {cmd}")
             self.log(f"Parsed args: {params}")
 
-            for plugin in self._plugins:
-                if cmd == plugin.name or cmd in plugin.aliases:
-                    self.log(f"Matched plugin: {plugin.__class__.__name__}")
-                    return plugin.run(params)
+            plugin = self._plugin_map.get(cmd)
+            if plugin:
+                self.log(f"Matched plugin: {plugin.__class__.__name__}")
+                return plugin.run(params)
 
-            self.warning(f"Unknown Command: {command}")
+            self.log(f"Unknown Command: {command}", level="warning")

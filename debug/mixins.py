@@ -3,8 +3,6 @@ import logging
 logger = logging.getLogger("jarvis")
 
 class DebugMixin:
-    def log(self, message: str) -> str:
-        logger.info(f"[{self.__class__.__name__}] {message}")
-        
-    def warning(self, message: str) -> str:
-         logger.warning(f"[{self.__class__.__name__}] {message}")
+    def log(self, message: str, level: str = "debug"):
+        log_func = getattr(logger, level.lower(), logger.info)
+        log_func(f"[{self.__class__.__name__}] {message}")
