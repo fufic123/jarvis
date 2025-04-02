@@ -19,6 +19,9 @@ class Router(DebugMixin):
             if not command:
                 return "Empty command."
 
+            if command == "/help":
+                return print(self._get_help())
+
             args = command.split()
             cmd = args[0].lower()
             params = args[1:]
@@ -32,3 +35,15 @@ class Router(DebugMixin):
                 return plugin.run(params)
 
             self.log(f"Unknown Command: {command}", level="warning")
+        
+    
+    def _get_help(self) -> str:
+        lines = ["Available commands:"]
+        unique_plugins = set(self._plugin_map.values())
+
+        for plugin in unique_plugins:
+            aliases = plugin.aliases
+            alias_str = f" (aliases: {', '.join(aliases)})" if aliases else ""
+            lines.append(f" - {plugin.name}{alias_str}: {plugin.description}")
+        
+        return "\n".join(lines)

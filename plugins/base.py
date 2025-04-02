@@ -6,6 +6,7 @@ class Plugin(DebugMixin):
     
     _name: str = ""
     _aliases: list = []
+    _description: str = ""
     
     def __init__(self):
         super().__init__()
@@ -18,6 +19,10 @@ class Plugin(DebugMixin):
     def aliases(self):
         return self._aliases
     
+    @property
+    def description(self):
+        return self._description
+         
     def run(self, args: list) -> str:
         raise NotImplementedError
     
