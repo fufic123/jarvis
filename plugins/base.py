@@ -1,8 +1,14 @@
-class Plugin:
+from debug.mixins import DebugMixin
+
+
+class Plugin(DebugMixin):
+    registry = []
+    
     _name: str = ""
     _aliases: list = []
-    registry = []
-
+    
+    def __init__(self):
+        super().__init__()
     
     @property
     def name(self):

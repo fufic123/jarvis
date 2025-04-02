@@ -7,7 +7,7 @@
 `/joke` - no params, returning `he-he-he`
 
 #### v0.1.1
-mixin for logging
+debug
 
 #### v0.2.0
 `/echo params` - returning params
