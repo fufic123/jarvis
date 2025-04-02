@@ -9,12 +9,18 @@
 #### v0.1.1
 debug
 
+#### v0.1.2
+beautify logging
+
+#### v0.1.3
+plugins map instead of loop
+
 #### v0.2.0
 `/echo params` - returning params
 `/yo`, `/hi`, `/hello` - same command, returning `Hello World`
 `/joke` - returning `he-he-he`
 `/help` - list of all commands
-plugins map instead of loop
+
 
 #### v0.3.0
 subcommands
