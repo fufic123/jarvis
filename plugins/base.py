@@ -17,11 +17,11 @@ class Plugin(DebugMixin):
     
     @property
     def aliases(self):
-        return self._aliases
+        return getattr(self, "_aliases", "No aliases provided")
     
     @property
     def description(self):
-        return self._description
+        return getattr(self, "_description", "No description provided")
          
     def run(self, args: list) -> str:
         raise NotImplementedError

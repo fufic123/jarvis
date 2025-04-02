@@ -5,7 +5,6 @@ from debug.decorators import log_call
 @register_plugin
 class EchoPlugin(Plugin):
     _name = '/echo'
-    _aliases = []
     _description = "Echoes back the given arguments. Returns '200' if no arguments are provided."
     
     @log_call
