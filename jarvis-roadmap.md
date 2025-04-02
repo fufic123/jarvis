@@ -13,7 +13,8 @@ debug
 `/echo params` - returning params
 `/yo`, `/hi`, `/hello` - same command, returning `Hello World`
 `/joke` - returning `he-he-he`
-
-#### v0.3.0
 `/help` - list of all commands
 plugins map instead of loop
+
+#### v0.3.0
+subcommands

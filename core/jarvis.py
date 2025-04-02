@@ -1,15 +1,11 @@
-import logging
-from .router import Router
+from core.router import Router
+from .logs import setup_logging
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s | %(levelname)s | %(name)s | %(message)s",
-    datefmt="%H:%M:%S"
-)
 
 class JarvisCore:
     def __init__(self):
+        setup_logging()
         self._router = Router()
-        
-    def process_input(self, text: str) -> str: # text param will be text in future not just a command
+
+    def process_input(self, text: str) -> str:
         return self._router.handle_command(text)

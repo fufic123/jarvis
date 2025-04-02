@@ -18,7 +18,7 @@ class Plugin(DebugMixin):
     def aliases(self):
         return self._aliases
     
-    def run(self) -> str:
+    def run(self, args: list) -> str:
         raise NotImplementedError
     
 

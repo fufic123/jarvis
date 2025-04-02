@@ -1,6 +1,6 @@
 from .base import Plugin, register_plugin
 from debug.decorators import log_call
-from debug.context import log_context
+
 
 @register_plugin
 class EchoPlugin(Plugin):
@@ -8,6 +8,5 @@ class EchoPlugin(Plugin):
     _aliases = []
     
     @log_call
-    def run(self):
-        with log_context("Executing /echo command"):
-            return '200'
+    def run(self, args: list) -> str:
+            return " ".join(args) if args else "echo"
