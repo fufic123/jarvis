@@ -1,4 +1,6 @@
-def main():
+import asyncio
+
+async def main():
     from core.jarvis import JarvisCore
     
     jarvis = JarvisCore()
@@ -8,8 +10,8 @@ def main():
         if user_input in ['exit', 'quit']:
             break
         
-        response = jarvis.process_input(user_input)
-        
+        response = await jarvis.process_input(user_input)
+        print(response)
 
 if __name__ == '__main__':
-    main()
+    asyncio.run(main())

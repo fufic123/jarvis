@@ -1,3 +1,5 @@
+import asyncio
+
 from core.router import Router
 from .logs import setup_logging
 
@@ -7,5 +9,5 @@ class JarvisCore:
         setup_logging()
         self._router = Router()
 
-    def process_input(self, text: str) -> str:
-        return self._router.handle_command(text)
+    async def process_input(self, text: str) -> str:
+        return await self._router.handle_command(text)

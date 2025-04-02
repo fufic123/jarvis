@@ -1,10 +1,11 @@
 import logging
-from contextlib import contextmanager
+from contextlib import asynccontextmanager
+import asyncio
 
 logger = logging.getLogger("jarvis")
 
-@contextmanager
-def log_context(message: str):
+@asynccontextmanager
+async def log_context(message: str):
     logger.info(f"↪ START: {message}")
     try:
         yield

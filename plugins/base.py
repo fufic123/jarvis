@@ -23,7 +23,7 @@ class Plugin(DebugMixin):
     def description(self):
         return getattr(self, "_description", "No description provided")
          
-    def run(self, args: list) -> str:
+    async def run(self, args: list) -> str:
         raise NotImplementedError
     
 

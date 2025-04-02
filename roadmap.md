@@ -30,27 +30,27 @@ Example `/echw`, `.echw`, `/wcho` → `Maybe you mean /echo`
 #### v0.2.2
 switch to async/await (run async plugins)
 
-#### v0.2.3
+#### v0.3.0
+`/todo` — add/list/delete  
+`/notify` — send console or system alerts  
+`/time` — show current time (user timezone)
+
+#### v0.3.1
 `/memory`
 subcommands support:  
 `/memory set key value`, `/todo add task`, etc.
 
-#### v0.3.0
-✅ `/todo` — add/list/delete  
-✅ `/notify` — send console or system alerts  
-✅ `/time` — show current time (user timezone)
-
-#### v0.3.1
-🧠 Basic memory system used **only inside plugins** (e.g., `/notify`)  
+#### v0.3.2
+Basic memory system used **only inside plugins** (e.g., `/notify`)  
 Not available to user directly yet
 
-#### v0.3.2
-🤖 Agent system base  
+#### v0.3.3
+Agent system base  
 - Passive agents: react to triggers (time-based or context-based)  
 - `/agent list`  
 - Background tick loop
 
-#### v0.3.3
+#### v0.3.4
 Natural Language → command mapping (NLP router)  
 - `/do remind me to drink water in 5 minutes`  
 → calls `/todo add "drink water"` or `/notify`  

@@ -1,3 +1,5 @@
+import asyncio
+
 from .base import Plugin, register_plugin
 from debug.decorators import log_call
 
@@ -8,5 +10,5 @@ class EchoPlugin(Plugin):
     _description = "Greets the user with 'Hello World'. Available via /yo, /hi, or /hello."
     
     @log_call
-    def run(self, args: list) -> str:
+    async def run(self, args: list) -> str:
         return 'Hello World'
