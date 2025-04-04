@@ -6,8 +6,8 @@ logger = logging.getLogger("jarvis")
 
 @asynccontextmanager
 async def log_context(message: str):
-    logger.info(f"↪ START: {message}")
+    logger.context(f"↪ START: {message}")
     try:
         yield
     finally:
-        logger.info(f"↩ END: {message}")
+        logger.context(f"↩ END: {message}")

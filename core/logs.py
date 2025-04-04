@@ -1,13 +1,23 @@
 import logging
 import sys
 
+CONTEXT_LEVEL = 25
+logging.addLevelName(CONTEXT_LEVEL, "CONTEXT")
+
+def context(self, message, *args, **kwargs):
+    if self.isEnabledFor(CONTEXT_LEVEL):
+        self._log(CONTEXT_LEVEL, message, args, **kwargs)
+
+logging.Logger.context = context
+
 class ColorFormatter(logging.Formatter):
     COLORS = {
         'DEBUG': '\033[90m',
         'INFO': '\033[94m',
         'WARNING': '\033[93m',
         'ERROR': '\033[91m',
-        'CRITICAL': '\033[95m'
+        'CRITICAL': '\033[95m',
+        'CONTEXT': '\033[96m',
     }
     RESET = '\033[0m'
 

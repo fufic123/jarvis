@@ -34,6 +34,7 @@ switch to async/await (run async plugins)
 `/todo` — add/list/delete  
 `/notify` — send console or system alerts  
 `/time` — show current time (user timezone)
+`/remind`
 
 #### v0.3.1
 `/memory`
