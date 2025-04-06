@@ -41,17 +41,18 @@ switch to async/await (run async plugins)
 subcommands support:  
 `/memory set key value`, `/todo add task`, etc.
 
-#### v0.3.2
-Basic memory system used **only inside plugins** (e.g., `/notify`)  
-Not available to user directly yet
+#### v0.3.1
+`/geo agrs` - geo (default argument is `me`)
+`/weather args` - weather (default argument is result of `/geo me`) 
 
-#### v0.3.3
+
+#### v0.4.0
 Agent system base  
 - Passive agents: react to triggers (time-based or context-based)  
 - `/agent list`  
 - Background tick loop
 
-#### v0.3.4
+#### v0.4.1
 Natural Language → command mapping (NLP router)  
 - `/do remind me to drink water in 5 minutes`  
 → calls `/todo add "drink water"` or `/notify`  
